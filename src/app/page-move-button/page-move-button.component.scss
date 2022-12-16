@@ -1,0 +1,36 @@
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.search-index {
+  ul {
+    margin-top: 54px;
+    display: flex;
+    justify-content: center;
+
+    li {
+      & + li {
+        margin-left: 8px;
+      }
+
+      button {
+        width: 20px;
+        height: 12px;
+        padding: 12px;
+        background-color: rgb(118, 219, 253);
+        color: black;
+
+        &:hover {
+          opacity: 0.7;
+          border: 2px solid black;
+        }
+
+        &.current {
+          background-color:rgb(111, 152, 255)
+        }
+      }
+    }
+  }
+}

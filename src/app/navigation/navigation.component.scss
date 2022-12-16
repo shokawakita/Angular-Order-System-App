@@ -1,0 +1,38 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul, li {
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+nav {
+  background-color: rgb(240, 240, 240);
+  position: fixed;
+  top: 64px;
+  left: 0;
+  bottom: 0;
+  width: 196px;
+  outline: 3px solid rgb(150, 150, 150);
+  padding: 24px 0 0 24px;
+
+  h2 {
+    margin-bottom: 24px;
+    font-size: 18px;
+  }
+
+  ul {
+    li {
+      font-weight: bold;
+
+      a {color: rgb(3, 150, 218);}
+
+      & + li {
+        padding-top: 24px;
+      }
+    }
+  }
+}

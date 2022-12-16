@@ -1,0 +1,72 @@
+<section class="form">
+  <div class="list-header">
+    <h2>商品の詳細</h2>
+  </div>
+  <article>
+    <div>
+      <h2>商品名：{{item.name | titlecase}}</h2>
+      <span
+        (click)="item.isFavo = true"
+        *ngIf="!item.isFavo"
+      >☆</span>
+      <span
+        (click)="item.isFavo = false"
+        *ngIf="item.isFavo"
+      >★</span>
+    </div>
+    <div>
+      <div>
+        <img
+        *ngIf="item.url"
+        src={{item.url}}
+        alt={{item.name}}
+        width="250"
+        height="250"
+        title="detail"
+        >
+        <img
+          *ngIf="!item.url"
+          src={{noImageUrl}}
+          alt={{item.name}}
+          width="250"
+          height="250"
+          title="detail"
+        >
+      </div>
+      <div>
+        <h2>【商品について】</h2>
+        <ul>
+          <li>商品番号：0000{{item.id}}</li>
+          <li>商品価格：{{item.price}}円</li>
+          <li>種類：{{item.category}}</li>
+          <li>メーカー：{{item.maker.name}}</li>
+          <li>在庫：残り<span class="count">{{item.count}}</span>個</li>
+        </ul>
+      </div>
+    </div>
+
+  </article>
+
+  <div class="example-button-row">
+    <button
+      mat-stroked-button
+    >購入画面に進む</button>
+    <button
+      mat-stroked-button
+    >商品情報を編集する</button>
+    <button
+      mat-stroked-button
+      (click)="deleteItemEvent(item)"
+    >この商品を削除する</button>
+  </div>
+
+  <a class="back-page" routerLink="/list-form">
+    <img
+      src="https://icons.getbootstrap.com/assets/icons/back.svg"
+      alt="back"
+      width="20"
+      height="20"
+    >
+    <span> back</span>
+  </a>
+</section>

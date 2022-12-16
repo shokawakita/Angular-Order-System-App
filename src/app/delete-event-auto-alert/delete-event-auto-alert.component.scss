@@ -1,0 +1,17 @@
+.auto-alert {
+  position: fixed;
+  top: 58px;
+  right: 200px;
+  left: 200px;
+  background-color: rgb(252, 226, 162);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 8px;
+  z-index: 10;
+
+  &.appear{
+    opacity: 1;
+  }
+}

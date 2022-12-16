@@ -1,0 +1,27 @@
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding-left: 32px;
+  background-color: white;
+  height: 64px;
+  border-bottom: 3px solid rgb(150, 150, 150);
+  z-index: 10;
+
+  .top-icon {
+    padding-top: 12px;
+    display: flex;
+    align-Item: center;
+    gap: 32px;
+
+    img {
+      width: 32px
+    }
+
+    h1 {
+      padding-top: 8px;
+      font-size: 24px;
+    }
+  }
+}

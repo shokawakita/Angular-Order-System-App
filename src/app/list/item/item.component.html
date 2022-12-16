@@ -1,0 +1,58 @@
+<article>
+  <div>
+    <h2>{{item.name | titlecase}}</h2>
+    <div *ngIf="item.register">
+      <span
+        (click)="item.isFavo = true"
+        *ngIf="!item.isFavo"
+      >☆</span>
+      <span
+        (click)="item.isFavo = false"
+        *ngIf="item.isFavo"
+      >★</span>
+    </div>
+  </div>
+  <div>
+    <div>
+      <a routerLink="/list-form/{{item.id}}">
+        <img
+        *ngIf="item.url"
+        src={{item.url}}
+        alt={{item.name}}
+        width="190"
+        height="190"
+        title="detail"
+        >
+      </a>
+      <a routerLink="/list-form/{{item.id}}">
+        <img
+          *ngIf="!item.url"
+          src={{noImageUrl}}
+          alt={{item.name}}
+          width="190"
+          height="190"
+          title="detail"
+        >
+      </a>
+    </div>
+    <div>
+      <h2>【商品について】</h2>
+      <ul>
+        <li>商品番号：0000{{item.id}}</li>
+        <li>商品価格：{{item.price}}円</li>
+        <li>在庫：残り<span class="count">{{item.count}}</span>個</li>
+      </ul>
+
+      <div class="example-button-row">
+        <a routerLink="/list-form/{{item.id}}">
+          <button mat-stroked-button>詳細</button>
+        </a>
+        <button
+          (click)="deleteEvent(item)"
+          mat-stroked-button
+        >削除</button>
+      </div>
+    </div>
+  </div>
+
+</article>

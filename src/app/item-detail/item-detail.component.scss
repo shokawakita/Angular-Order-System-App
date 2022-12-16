@@ -1,0 +1,161 @@
+ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+h2 {
+  font-weight: normal;
+  margin: 0;
+}
+
+@mixin limitFontSpace($width) {
+  width: $width;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin buttonStyle($a, $b, $c) {
+  background-color: rgb($a, $b, $c);
+  opacity: 1;
+  transition: opacity .3s;
+
+  &:hover {
+    opacity: 0.8;
+    border: 1px solid black;
+  }
+}
+
+section {
+  background-color: white;
+  margin: 0 32px;
+  padding-bottom: 64px;
+
+  .list-header {
+    font-size: 20px;
+    padding: 24px 0 0 24px;
+    height: auto;
+
+    h2 {
+      padding-top: 64px;
+    }
+  }
+
+  article {
+    width: 90%;
+    min-height: 500px;
+    margin: 24px auto;
+    border: 2px solid black;
+    border-radius: 12px;
+    padding: 16px 32px;
+    background-color: white;
+
+    & > div:nth-child(1){
+      position: relative;
+
+      h2 {
+        font-size: 20px;
+        @include limitFontSpace(85%)
+      }
+      span {
+        position: absolute;
+        top: 2px;
+        right: 4px;
+        padding: 4px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #eee;
+        }
+      }
+    }
+
+    & > div:nth-child(2) {
+      margin-top: 32px;
+      display: flex;
+      justify-content: space-between;
+
+      div:nth-child(1) {
+        width: 30%;
+
+        img {
+          border: 1px solid black;
+          border-radius: 4px;
+          box-shadow: 2px 2px #eee;
+          transition: opacity .3s;
+          object-fit: cover;
+
+          &:hover {
+            opacity: 0.8;
+            cursor: pointer;
+          }
+        }
+
+        & > div {
+          width: 190px;
+          height: 190px;
+        }
+      }
+
+      div:nth-child(2) {
+        width: 60%;
+        padding-top: 8px;
+
+        h2 {
+          font-size: 16px;
+        }
+
+        ul {
+          li {
+            @include limitFontSpace(90%);
+
+            span {
+              color: red;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .example-button-row {
+    margin: 8px 8px 8px 0;
+    text-align: right;
+    padding-right: 64px;
+
+    button {
+      color: black;
+      font-size: 12px;
+      font-weight: bold;
+      width: 160px;
+      height: 32px;
+    }
+
+    button + button {
+      margin-left: 8px;
+    }
+    button:nth-child(1) {
+      @include buttonStyle(137, 255, 135)
+    }
+    button:nth-child(2) {
+      @include buttonStyle(255, 225, 107)
+    }
+    button:nth-child(3) {
+      @include buttonStyle(255, 70, 60)
+    }
+  }
+
+  .back-page {
+    position: absolute;
+    right: 128px;
+    display: inline-block;
+    padding: 4px;
+    border-radius: 4px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #eee;
+    }
+  }
+}
+

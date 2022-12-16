@@ -1,0 +1,50 @@
+<section class="my-page-form">
+
+  <h1>マイページ</h1>
+  <div>
+    <h2>プロフィール</h2>
+    <article class="imfomation-data">
+      <ul>
+        <li>会社名：</li>
+        <li>アクティビティログ</li>
+        <li>商品数：</li>
+        <li>発注回数：</li>
+      </ul>
+    </article>
+  </div>
+
+  <div>
+    <h2>お気に入りの商品</h2>
+    <article
+      class="favorote-item-list"
+      *ngFor="let item of items"
+    >
+      <ul *ngIf="item.isFavo">
+        <li>
+          <a
+            routerLink="/list-form/{{item.id}}"
+            *ngIf="item.url"
+          >
+            <img
+              src={{item.url}}
+              alt={{item.name}}
+              width="200"
+              height="200"
+            >
+          </a>
+          <a
+            routerLink="/list-form/{{item.id}}"
+            *ngIf="!item.url"
+          >
+            <img
+              src={{item.url}}
+              alt={{item.name}}
+              width="200"
+              height="200"
+            >
+          </a>
+        </li>
+      </ul>
+    </article>
+  </div>
+</section>

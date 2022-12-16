@@ -1,0 +1,39 @@
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin  main-article-style() {
+  background-color: white;
+  margin: 0 32px;
+  padding: 12px 16px;
+  min-height: calc(100vh - 136px);
+}
+
+@mixin list-ul-style(){
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - 10px));
+  gap: 12px;
+}
+
+@mixin list-li-style() {
+  cursor: unset;
+  padding: 12px;
+  height: 256px;
+  border: 1px solid black;
+  border-radius: 12px;
+  box-shadow: 1px 1px #eee;
+  &:hover{background-color: rgb(247, 247, 247);}
+}
+
+.list-article {
+  @include main-article-style();
+
+  ul {
+    @include list-ul-style();
+
+    li {@include list-li-style();}
+  }
+}
+

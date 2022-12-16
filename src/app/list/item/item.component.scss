@@ -1,0 +1,112 @@
+ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+h2 {
+  font-weight: normal;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+
+@mixin limitFontSpace($width) {
+  width: $width;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+article {
+  width: 100%;
+
+  & > div:nth-child(1){
+    position: relative;
+
+    h2 {
+      font-size: 20px;
+      @include limitFontSpace(85%)
+    }
+    & > div {
+
+      span {
+        position: absolute;
+        top: 2px;
+        right: 4px;
+        padding: 4px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #eee;
+        }
+      }
+    }
+  }
+
+  & > div:nth-child(2) {
+    display: flex;
+    justify-content: space-between;
+
+    div:nth-child(1) {
+      width: 30%;
+
+      img {
+        border: 1px solid black;
+        border-radius: 4px;
+        box-shadow: 2px 2px #eee;
+        transition: opacity .3s;
+        object-fit: cover;
+
+        &:hover {
+          opacity: 0.8;
+          cursor: pointer;
+        }
+      }
+
+      & > div {
+        width: 190px;
+        height: 190px;
+      }
+    }
+
+    div:nth-child(2) {
+      width: 50%;
+      padding-top: 8px;
+
+      h2 {
+        font-size: 16px;
+      }
+
+      ul {
+        li {
+          @include limitFontSpace(90%);
+
+          span {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}
+
+.example-button-row {
+  margin: 8px 8px 8px 0;
+
+  button {
+    font-size: 10px;
+    font-weight: bold;
+    width: 16px;
+    height: 20px;
+  }
+
+  & > a {
+      button{background-color:rgb(142, 227, 255);}
+  }
+
+  & > button {
+    margin-left: 8px;
+    background-color: rgb(255, 191, 108);
+  }
+}

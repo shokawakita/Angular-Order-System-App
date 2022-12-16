@@ -1,0 +1,16 @@
+<section>
+  <div class="list-header">
+    <h2>発注管理</h2>
+  </div>
+
+  <app-list
+    [currentPage]="currentPage"
+    [menuType]="menuType"
+  ></app-list>
+
+  <app-page-move-button
+    [currentPage]="currentPage"
+    [registerList]="registerList"
+    (pageMoveEvent)="currentPageMoveEvent($event)"
+  ></app-page-move-button>
+</section>

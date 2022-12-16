@@ -1,0 +1,45 @@
+// @import '~@angular/material/theming';
+// @include mat-core();
+
+// // Available color palettes: https://material.io/design/color/
+// $candy-app-primary: mat-palette($mat-orange);
+// $candy-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+// $candy-app-warn:    mat-palette($mat-red);
+
+// $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+// @include angular-material-theme($candy-app-theme);
+// @import '~@angular/material/theming';
+// @include mat-core();
+
+// $dark-primary: mat-palette($mat-blue-grey);
+// $dark-accent:  mat-palette($mat-amber, A200, A100, A400);
+// $dark-warn:    mat-palette($mat-deep-orange);
+// $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+// .unicorn-dark-theme {
+//   @include angular-material-theme($dark-theme);
+// }
+
+// @function define-palette($base-palette, $default: 500, $lighter: 100, $darker: 700,
+//   $text: $default) {
+//   $result: map.merge($base-palette, (
+//     default: map.get($base-palette, $default),
+//     lighter: map.get($base-palette, $lighter),
+//     darker: map.get($base-palette, $darker),
+//     text: map.get($base-palette, $text),
+
+//     default-contrast: get-contrast-color-from-palette($base-palette, $default),
+//     lighter-contrast: get-contrast-color-from-palette($base-palette, $lighter),
+//     darker-contrast: get-contrast-color-from-palette($base-palette, $darker)
+//   ));
+
+//   // For each hue in the palette, add a "-contrast" color to the map.
+//   @each $hue, $color in $base-palette {
+//     $result: map.merge($result, (
+//       '#{$hue}-contrast': get-contrast-color-from-palette($base-palette, $hue)
+//     ));
+//   }
+
+//   @return $result;
+// }
+

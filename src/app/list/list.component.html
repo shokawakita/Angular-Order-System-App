@@ -1,0 +1,39 @@
+<div class="list-article">
+
+    <!--登録商品の一覧を表示する場合 -->
+  <div *ngIf="menuType != 'search-item'">
+    <div *ngFor="let Item of registerList">
+      <ul *ngIf="Item == registerList[currentPage]">
+        <li *ngFor="let item of Item">
+          <app-item
+            [item]="item"
+            [items]="registerList"
+            (isOpen)="timerAlert($event)"
+            (deleteUpdateItem)="deleteUpdateItem($event)"
+          ></app-item>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 未登録商品の一覧を表示する場合 -->
+  <div *ngIf="menuType == 'search-item'">
+    <div *ngFor="let items of unRegisterList">
+      <ul *ngIf="items == unRegisterList[currentPage]">
+        <li *ngFor="let item of items">
+          <app-item
+            [item]="item"
+            [items]="unRegisterList"
+            (isOpen)="timerAlert($event)"
+            (deleteUpdateItem)="deleteUpdateItem($event)"
+          ></app-item>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+<!-- 削除した際のモーダルの自動表示・自動非表示 -->
+  <app-delete-event-auto-alert
+    [open]="open"
+  ></app-delete-event-auto-alert>
+</div>
