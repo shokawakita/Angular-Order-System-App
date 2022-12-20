@@ -1,4 +1,11 @@
+<div *ngFor="let formElement of form">
   <div
+    *ngIf="open.option == formElement.name"
     class="auto-alert"
-    [class.appear]="open"
-  >商品を削除しました。(削除した商品は「ゴミ箱」から戻すことが可能です)</div>
+    [class.appear]="open.isOpen"
+  >
+    {{formElement.distribution}}
+  </div>
+</div>
+
+

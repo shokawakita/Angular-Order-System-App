@@ -1,0 +1,12 @@
+img {
+  border: 1px solid black;
+  border-radius: 4px;
+  box-shadow: 2px 2px #eee;
+  transition: opacity .3s;
+  object-fit: cover;
+
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}

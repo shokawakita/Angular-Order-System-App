@@ -1,0 +1,15 @@
+<h2>商品確認画面</h2>
+<div class="order-form" *ngIf="orderItems.length != 0">
+  <app-confirm-list
+    [orderItems]="orderItems"
+    (createLogOrderItems)="createLogOrderItems($event)"
+  ></app-confirm-list>
+
+</div>
+
+<div class="no-item-form" *ngIf="orderItems.length == 0">
+  <h2>商品を追加してください</h2>
+</div>
+
+<app-delete-event-auto-alert
+></app-delete-event-auto-alert>

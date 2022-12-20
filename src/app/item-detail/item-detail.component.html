@@ -16,22 +16,10 @@
     </div>
     <div>
       <div>
-        <img
-        *ngIf="item.url"
-        src={{item.url}}
-        alt={{item.name}}
-        width="250"
-        height="250"
-        title="detail"
-        >
-        <img
-          *ngIf="!item.url"
-          src={{noImageUrl}}
-          alt={{item.name}}
-          width="250"
-          height="250"
-          title="detail"
-        >
+        <app-image
+          [item]="item"
+          [size]="250"
+        ></app-image>
       </div>
       <div>
         <h2>【商品について】</h2>
@@ -47,26 +35,7 @@
 
   </article>
 
-  <div class="example-button-row">
-    <button
-      mat-stroked-button
-    >購入画面に進む</button>
-    <button
-      mat-stroked-button
-    >商品情報を編集する</button>
-    <button
-      mat-stroked-button
-      (click)="deleteItemEvent(item)"
-    >この商品を削除する</button>
-  </div>
-
-  <a class="back-page" routerLink="/list-form">
-    <img
-      src="https://icons.getbootstrap.com/assets/icons/back.svg"
-      alt="back"
-      width="20"
-      height="20"
-    >
-    <span> back</span>
-  </a>
+  <app-item-detail-button
+    [item]="item"
+  ></app-item-detail-button>
 </section>

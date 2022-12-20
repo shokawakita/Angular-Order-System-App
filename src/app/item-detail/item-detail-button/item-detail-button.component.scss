@@ -1,0 +1,50 @@
+@mixin buttonStyle($a, $b, $c) {
+  background-color: rgb($a, $b, $c);
+  opacity: 1;
+  transition: opacity .3s;
+
+  &:hover {
+    opacity: 0.8;
+    border: 1px solid black;
+  }
+}
+
+.example-button-row {
+  margin: 8px 8px 8px 0;
+  text-align: right;
+  padding-right: 64px;
+
+  button {
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    width: 160px;
+    height: 32px;
+  }
+
+  button + button {
+    margin-left: 8px;
+  }
+  button:nth-child(1) {
+    @include buttonStyle(137, 255, 135)
+  }
+  button:nth-child(2) {
+    @include buttonStyle(255, 225, 107)
+  }
+  button:nth-child(3) {
+    @include buttonStyle(255, 70, 60)
+  }
+}
+
+.back-page {
+  position: absolute;
+  right: 128px;
+  display: inline-block;
+  padding: 4px;
+  border-radius: 4px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #eee;
+  }
+}

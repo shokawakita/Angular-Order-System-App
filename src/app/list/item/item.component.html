@@ -15,24 +15,11 @@
   <div>
     <div>
       <a routerLink="/list-form/{{item.id}}">
-        <img
-        *ngIf="item.url"
-        src={{item.url}}
-        alt={{item.name}}
-        width="190"
-        height="190"
-        title="detail"
+        <app-image
+          [item]="item"
+          [size]="190"
         >
-      </a>
-      <a routerLink="/list-form/{{item.id}}">
-        <img
-          *ngIf="!item.url"
-          src={{noImageUrl}}
-          alt={{item.name}}
-          width="190"
-          height="190"
-          title="detail"
-        >
+        </app-image>
       </a>
     </div>
     <div>
@@ -47,10 +34,30 @@
         <a routerLink="/list-form/{{item.id}}">
           <button mat-stroked-button>詳細</button>
         </a>
+        <!-- 登録商品画面のみ削除ボタン実装 -->
         <button
+          *ngIf="menuType == 'list-form'"
           (click)="deleteEvent(item)"
           mat-stroked-button
-        >削除</button>
+        >解除</button>
+        <!-- 発注管理画面で商品の購入をするためのカウント -->
+        <div
+          *ngIf="menuType == 'order-management'"
+          class="add-area"
+        >
+          <span>個数：　</span>
+          <input
+            type="number"
+            placeholder="0"
+            min="0"
+            max={{item.count}}
+            #count
+          >
+          <span
+            (click)="submitItem(count.value); count.value = ''"
+            class="add-button"
+          >追加</span>
+        </div>
       </div>
     </div>
   </div>

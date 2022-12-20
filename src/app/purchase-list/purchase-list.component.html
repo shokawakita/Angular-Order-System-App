@@ -1,0 +1,15 @@
+<div class="purchase-list"(click)="items.open = !items.open">
+  <p>【発注商品番号】：　{{index + 1}}</p>
+  <p>　【発注時間】：　{{items.order}}</p>
+  <p>　【会計金額】：　{{totalPrice}}円</p>
+</div>
+<p class="title" [class.open]="items.open">【購入商品】</p>
+<div class="purchase-detail" >
+  <li [class.open]="items.open">
+    <div *ngFor="let item of items.orderItems">
+      <app-purchase-item
+        [item]="item"
+      ></app-purchase-item>
+    </div>
+  </li>
+</div>

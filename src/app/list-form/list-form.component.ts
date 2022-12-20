@@ -11,7 +11,6 @@ import { Item } from '../items';
 export class ListFormComponent {
   currentPage: number = -1;
   registerList!: Item[][];
-  menuType!: string;
 
   constructor(
     private appService: AppService,
@@ -20,7 +19,7 @@ export class ListFormComponent {
   ngOnInit() {
     this.currentPage = this.appService.getCurrentPage()
     this.registerList = this.appService.getRegisterList()
-    this.menuType = this.appService.getMenuType(1)
+    this.appService.setMenuType('list-form')
   }
 
   // ボタンクリック時に指定ページに移動

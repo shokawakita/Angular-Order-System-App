@@ -1,1 +1,39 @@
-<p>purchase-log works!</p>
+<h2>　購入履歴</h2>
+
+<div
+  class="purchase-log-area"
+  *ngIf="logOrderItems.length != 0"
+>
+  <ul
+    *ngFor="let items of logOrderItems;
+    let e = index"
+  >
+    <app-purchase-list
+      [items]="items"
+      [index]="e"
+    >
+    </app-purchase-list>
+    <!-- <div (click)="items.open = !items.open">
+      <p>【発注商品番号】：　{{e + 1}}</p>
+      <p>　【発注時間】：　{{items.order}}</p>
+      <p>　【会計金額】：　{{totalPrice}}円</p>
+    </div>
+    <li [class.open]="items.open">
+      <p>【購入商品】</p>
+      <p *ngFor="let item of items.orderItems">{{item.name}}</p>
+    </li> -->
+  </ul>
+</div>
+<!-- <div class="purchase-log-area" *ngIf="logOrderItems.length != 0">
+  <ul *ngFor="let items of logOrderItems ; let e = index">
+    <p>発注商品番号：{{e}}</p>
+    <p>発注時間{{items.order}}</p>
+    <li *ngFor="let item of items.orderItems">
+      {{item.name}}
+    </li>
+  </ul>
+</div> -->
+
+<div *ngIf="logOrderItems.length == 0">
+  <h2>商品を発注するとこちらに表示されます</h2>
+</div>

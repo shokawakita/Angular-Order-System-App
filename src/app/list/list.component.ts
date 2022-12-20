@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Item } from '../items';
 import { AppService } from 'src/app/app.service';
-
+import { Open } from '../items';
 
 @Component({
   selector: 'app-list',
@@ -12,11 +12,11 @@ export class ListComponent {
   @Input() currentPage!: number;
   @Input() registerList!: Item[][];
   @Input() unRegisterList!: Item[][];
-  @Input() menuType!: string;
+  menuType: string = '';
   @Output() deleteUpdate: EventEmitter<Item[][]> = new EventEmitter
 
   // deleteItem!: Item;
-  open: boolean = false;
+  open!: Open;
   currentItem!: Item;
 
   constructor(
@@ -27,11 +27,12 @@ export class ListComponent {
     this.registerList = this.appService.getRegisterList()
     this.unRegisterList = this.appService.getUnRegisterList()
     this.currentPage = this.appService.getCurrentPage();
+    this.open = this.appService.getOpen()
+    this.menuType = this.appService.getMenuType()
   }
 
   timerAlert(item: Item){
-    setTimeout(() => this.open = true, 100)
-    setTimeout(() => this.open = false, 8000)
+    this.appService.timerAlert()
   }
 
   deleteUpdateItem(items: Item[][]){

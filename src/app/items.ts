@@ -10,10 +10,33 @@ export type Item = {
   register: boolean
 }
 
+export type OrderItem =   {
+  id: number
+  name: string
+  price: number
+  category: string
+  maker: {name: string, adress: string}
+  orderCount: number
+  url: string
+  isFavo: boolean
+  register: boolean
+}
+
+export type LogOrderItems = {
+  orderItems: OrderItem[]
+  order: string
+  open: boolean
+}
+
+export type Open = {
+  isOpen: boolean
+  option: string
+}
+
 export const items: Item[] = [
-  {id: 1, name: 'applefoi;asdjo;gosadjgjsajgsj;gj;sjpsajpgjsdpo', price: 120, category: '果物', maker: {name: 'shop1', adress: 'sample1'}, count: 3, url: 'https://media.delishkitchen.tv/article/975/fd3sgtfnxen.jpeg?version=1634782151', isFavo: false, register: true},
-  {id: 2, name: 'banana', price: 80, category: '果物', maker: {name: 'shop2', adress: 'sample2'}, count: 4, url: '', isFavo: false, register: true},
-  {id: 3, name: 'grape', price: 300, category: '果物', maker: {name: 'shop3', adress: 'sample2'}, count: 5, url: 'https://www.asahi-kasei.co.jp/saran/assets/images/preservation/fruits/detail/food10_tph00.jpg', isFavo: false, register: true},
+  {id: 1, name: 'りんご', price: 120, category: '果物', maker: {name: 'shop1', adress: 'sample1'}, count: 3, url: 'https://media.delishkitchen.tv/article/975/fd3sgtfnxen.jpeg?version=1634782151', isFavo: false, register: true},
+  {id: 2, name: 'バナナ', price: 80, category: '果物', maker: {name: 'shop2', adress: 'sample2'}, count: 4, url: '', isFavo: false, register: true},
+  {id: 3, name: 'グレープ', price: 300, category: '果物', maker: {name: 'shop3', adress: 'sample2'}, count: 5, url: 'https://www.asahi-kasei.co.jp/saran/assets/images/preservation/fruits/detail/food10_tph00.jpg', isFavo: false, register: true},
   {id: 4, name: 'トマト', price: 150, category: '野菜', maker: {name: 'shop1', adress: 's1'}, count: 3, url: 'https://www.kewpie.co.jp/ingredients/cat_assets/img/vegetable/tomato/photo01.png', isFavo: false, register: false},
   {id: 5, name: 'マンゴー', price: 200, category: '果物', maker: {name: 'shop2', adress: 's2'}, count: 4, url: 'https://media.delishkitchen.tv/article/1508/w422stv2g38.jpeg?version=1647849333', isFavo: false, register: false},
   {id: 6, name: 'アボカド', price: 350, category: 'desert', maker: {name: 'shop3', adress: 's3'}, count: 5, url: 'https://thumb.photo-ac.com/56/5679db06efeb1939a96614b8456c21c6_t.jpeg', isFavo: false, register: false},

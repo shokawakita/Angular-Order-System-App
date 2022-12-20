@@ -11,7 +11,6 @@ import { AppService } from '../app.service';
 export class SearchItemFormComponent {
   unRegisterList!: Item[][]; // 未登録の商品一覧を10個ずつに分ける配列
   currentPage: number = -1;
-  menuType: string = '';
 
   constructor (
     private appService: AppService,
@@ -21,7 +20,7 @@ export class SearchItemFormComponent {
   ngOnInit() {
     this.currentPage = this.appService.getCurrentPage()
     this.unRegisterList = this.appService.getUnRegisterList()
-    this.menuType = this.appService.getMenuType(0)
+    this.appService.setMenuType('search-item')
   }
 
   // ボタンクリック時に指定ページに移動

@@ -8,6 +8,7 @@ import { MyPageComponent } from './my-page/my-page.component';
 import { GarbageComponent } from './garbage/garbage.component';
 import { PurchaseLogComponent } from './purchase-log/purchase-log.component';
 import { OrderManagementComponent } from './order-management/order-management.component';
+import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/top', pathMatch: 'full' },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'garbage', component: GarbageComponent},
   { path: 'purchase-log', component: PurchaseLogComponent},
   { path: 'order-management', component: OrderManagementComponent},
+  { path: 'confirm-order', component: ConfirmOrderComponent},
 ];
 
 @NgModule({

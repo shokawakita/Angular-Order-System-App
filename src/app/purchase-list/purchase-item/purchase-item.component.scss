@@ -1,0 +1,16 @@
+.purchase-item {
+
+  & > div {
+    border: 1px solid black;
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    margin: 12px;
+    gap: 32px;
+
+    img {
+      border: 1px solid black;
+      vertical-align: bottom;
+    }
+  }
+}

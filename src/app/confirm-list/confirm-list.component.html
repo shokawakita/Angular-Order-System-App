@@ -1,0 +1,19 @@
+<ul>
+  <li *ngFor="let item of orderItems">
+    <app-image
+      [item]="item"
+      [size]="98"
+    ></app-image>
+   <span>　【商品名】：　{{item.name}}</span>
+   <span>　【単価】：　{{item.price}}円</span>
+    <span>　【注文個数】：{{item.orderCount}}</span>
+    <span>　【金額】：　{{item.orderCount * item.price}}円</span>
+  </li>
+</ul>
+<p *ngIf="totalPrice != 0">合計金額：　<span>{{totalPrice}}</span>円</p>
+
+<button
+  class="c-button"
+  type="button"
+  (click)="createLogOrderItemsEvent()"
+>商品を発注する</button>

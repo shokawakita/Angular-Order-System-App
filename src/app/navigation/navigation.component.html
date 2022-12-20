@@ -1,12 +1,6 @@
 <nav>
   <h2>メニュー</h2>
-  <ul>
-    <li><a routerLink="/top">トップ</a></li>
-    <li><a routerLink="/my-page">マイページ</a></li>
-    <li><a routerLink="/order-management">発注管理</a></li>
-    <li><a routerLink="/list-form">商品管理</a></li>
-    <li><a routerLink="/search-item-form">商品検索</a></li>
-    <li><a routerLink="/purchase-log">購入履歴</a></li>
-    <li><a routerLink="/garbage">ゴミ箱</a></li>
+  <ul *ngFor="let navi of naviList">
+    <li><a routerLink={{navi.url}}>{{navi.name}}</a></li>
   </ul>
 </nav>

@@ -9,9 +9,7 @@ import { AppService } from '../app.service';
   styleUrls: ['./item-detail.component.scss']
 })
 export class ItemDetailComponent {
-  @Input() item!: Item;
-  @Output() page: EventEmitter<number> = new EventEmitter();
-  @Output() deleteItem: EventEmitter<Item> = new EventEmitter();
+  item!: Item;
   noImageUrl: string = noImageUrl
 
   constructor(
@@ -19,22 +17,11 @@ export class ItemDetailComponent {
     private route: ActivatedRoute
   ) {}
 
-  ngOnInit() {
-    this.getItem();
-  }
-
-  pageBack(Item: Item) {
-    this.page.emit(1)
-  }
+  ngOnInit() {this.getItem()}
 
   // ◯URLから対象のアイテムのデータを取得
   getItem() {
     const id = Number(this.route.snapshot.paramMap.get('id'))
     this.item = this.appService.getItem(id)
-  }
-
-  // ◯＠Outputのイベントの引き継ぎ
-  deleteItemEvent(item: Item) {
-    this.deleteItem.emit(item)
   }
 }

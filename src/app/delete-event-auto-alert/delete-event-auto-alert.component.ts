@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { Item } from '../items';
 import { AppService } from '../app.service';
+import { Open } from '../items';
+import { form, Form } from '../data/form';
 
 @Component({
   selector: 'app-delete-event-auto-alert',
@@ -8,9 +9,16 @@ import { AppService } from '../app.service';
   styleUrls: ['./delete-event-auto-alert.component.scss']
 })
 export class DeleteEventAutoAlertComponent {
-  @Input() open!: boolean;
+  form!: Form[];
+  open: Open = {
+    isOpen: false,
+    option: ''
+  }
 
   constructor(private appService: AppService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.open = this.appService.getOpen()
+    this.form = form;
+  }
 }

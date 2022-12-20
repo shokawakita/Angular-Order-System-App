@@ -51,19 +51,6 @@ article {
     div:nth-child(1) {
       width: 30%;
 
-      img {
-        border: 1px solid black;
-        border-radius: 4px;
-        box-shadow: 2px 2px #eee;
-        transition: opacity .3s;
-        object-fit: cover;
-
-        &:hover {
-          opacity: 0.8;
-          cursor: pointer;
-        }
-      }
-
       & > div {
         width: 190px;
         height: 190px;
@@ -108,5 +95,22 @@ article {
   & > button {
     margin-left: 8px;
     background-color: rgb(255, 191, 108);
+  }
+}
+
+.add-area {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+
+  .add-button {
+    font-size: 1px;
+    padding: 4px 16px;
+    background-color:rgb(255, 191, 108);
+    border: 1px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+
   }
 }

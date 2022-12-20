@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Item } from '../items';
 import { AppService } from '../app.service';
+import { OrderItem } from '../items';
+
 
 @Component({
   selector: 'app-order-management',
@@ -10,7 +12,8 @@ import { AppService } from '../app.service';
 export class OrderManagementComponent {
   currentPage: number = -1;
   registerList!: Item[][];
-  menuType: string = '';
+  orderItems: Item[] = [];
+  count!: number;
 
   constructor(
     private appService: AppService
@@ -19,7 +22,7 @@ export class OrderManagementComponent {
   ngOnInit() {
     this.registerList = this.appService.getRegisterList()
     this.currentPage = this.appService.getCurrentPage()
-    this.menuType = this.appService.getMenuType(2)
+    this.appService.setMenuType('order-management')
   }
 
   // ボタンクリック時に指定ページに移動

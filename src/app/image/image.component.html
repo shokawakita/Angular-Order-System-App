@@ -1,0 +1,16 @@
+<img
+*ngIf="item.url"
+src={{item.url}}
+alt={{item.name}}
+width={{size}}
+height={{size}}
+title="detail"
+>
+<img
+  *ngIf="!item.url"
+  src={{noImageUrl}}
+  alt={{item.name}}
+  width={{size}}
+  height={{size}}
+  title="detail"
+>
