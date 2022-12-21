@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListFormComponent } from './list-form/list-form.component';
-import { TopComponent } from './top/top.component'
-import { SearchItemFormComponent } from './search-item-form/search-item-form.component';
-import { ItemDetailComponent } from './item-detail/item-detail.component';
-import { MyPageComponent } from './my-page/my-page.component';
-import { GarbageComponent } from './garbage/garbage.component';
-import { PurchaseLogComponent } from './purchase-log/purchase-log.component';
-import { OrderManagementComponent } from './order-management/order-management.component';
-import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
+import { ListFormComponent } from './Components/list-form/list-form.component';
+import { TopComponent } from './Components/top/top.component'
+import { SearchItemFormComponent } from './Components/search-item-form/search-item-form.component';
+import { ItemDetailComponent } from './ReUse/item-detail/item-detail.component';
+import { MyPageComponent } from './Components/my-page/my-page.component';
+import { GarbageComponent } from './Components/garbage/garbage.component';
+import { PurchaseLogComponent } from './Components/purchase-log/purchase-log.component';
+import { OrderManagementComponent } from './Components/order-management/order-management.component';
+import { ConfirmOrderComponent } from './Components/confirm-order/confirm-order.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/top', pathMatch: 'full' },

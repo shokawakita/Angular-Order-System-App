@@ -23,6 +23,10 @@ export class AppService {
 
   constructor() { }
 
+  // ngOnInit() {
+  //   this.currentPage = this.getCurrentPage()
+  // }
+
   // getters
   getItem(id: number): Item {
     const item = this.items.find((h: Item) => h.id === id)!;
@@ -72,9 +76,14 @@ export class AppService {
   setMenuType(menuType: string){
     this.menuType = menuType
   }
+  setCurrentPage(page: number) {
+    this.currentPage = page
+  }
 
   // ◯アイテムの削除
-  removeItem(deleteItem: Item): Item[][] {
+  removeItem(deleteItem: Item): void | undefined {
+    if(!confirm(`「${deleteItem.name}」をリストから削除してもよろしいでしょうか？
+    削除したリストは「ゴミ箱」からもとに戻すことが可能です。`)){ return }
     // this.deleteItem = deleteItem;
     // [[], [], [],...]形式のため2つのインデックス（はじめの配列の順番とその配列の中でどこにあるか）が必要
     let pos1: number = -1;//削除する配列の順番の取得
@@ -92,9 +101,8 @@ export class AppService {
     }
     // 対象のアイテムの削除の実行
     this.registerList[pos1].splice(pos2, 1)
-
     // [[], [], []...]形式で一つの配列の要素数が10個になる配列を戻り値として取得するための関数を実行する
-    return this.assetFormalArrayList(this.registerList);
+    this.registerList = this.assetFormalArrayList(this.registerList);
   }
 
   // ◯[{}, {}, {}...]の配列を[[], [], []...]形式の形に10個単位に直すための関数
@@ -178,12 +186,25 @@ export class AppService {
     setTimeout(() =>{
       this.open.isOpen = false
       this.open.option = ''
-    }, 8000)
+    }, 4000)
   }
 
   calculateTotalPrice() {
     this.orderItems.forEach(item => {
       this.totalPrice += item.orderCount * item.price
     })
+  }
+
+  PageMoveEvent(i: number) {
+    // let pos: number = -1;
+    // for(let i = 0; i < this.unRegisterList.length; i++){
+    //   if(this.unRegisterList[i] == items) {
+    //     pos = i;
+    //   }
+    // }
+    // this.currentPage = pos
+
+    this.currentPage = i
+    this.scroll_to_top()
   }
 }

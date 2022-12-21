@@ -1,0 +1,22 @@
+<div class="search-index">
+   <!-- 登録時のボタン -->
+  <ul *ngIf="register">
+    <li *ngFor="let items of registerList; let i = index">
+      <button
+        mat-stroked-button
+        (click)="currentPageMoveEvent(i)"
+        [class.current]="currentPage == i"
+      >{{i + 1}}</button>
+    </li>
+  </ul>
+  <!-- 未登録時のボタン -->
+  <ul *ngIf="!register">
+    <li *ngFor="let items of unRegisterList; let i = index">
+      <button
+        mat-stroked-button
+        (click)="currentPageMoveEvent(i)"
+        [class.current]="currentPage == i"
+      >{{i + 1}}</button>
+    </li>
+  </ul>
+</div>

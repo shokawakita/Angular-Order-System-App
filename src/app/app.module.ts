@@ -5,28 +5,28 @@ import { MatListModule } from '@angular/material/list'
 import { MatButtonModule } from '@angular/material/button';
 
 import { AppComponent } from './app.component';
-import { ItemComponent } from './list/item/item.component';
-import { ListFormComponent } from './list-form/list-form.component';
-import { HeaderComponent } from './header/header.component';
+import { ItemComponent } from './ReUse/list/item/item.component';
+import { ListFormComponent } from './Components/list-form/list-form.component';
+import { HeaderComponent } from './Components/header/header.component';
 import { AppRoutingModule } from './app-routing.module';
-import { TopComponent } from './top/top.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { ListComponent } from './list/list.component';
+import { TopComponent } from './Components/top/top.component';
+import { NavigationComponent } from './Components/navigation/navigation.component';
+import { ListComponent } from './ReUse/list/list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ItemDetailComponent } from './item-detail/item-detail.component';
-import { SearchItemFormComponent } from './search-item-form/search-item-form.component';
-import { PageMoveButtonComponent } from './page-move-button/page-move-button.component';
-import { MyPageComponent } from './my-page/my-page.component';
-import { GarbageComponent } from './garbage/garbage.component';
-import { OrderManagementComponent } from './order-management/order-management.component';
-import { PurchaseLogComponent } from './purchase-log/purchase-log.component';
-import { ConfirmOrderComponent } from './confirm-order/confirm-order.component';
-import { ConfirmListComponent } from './confirm-list/confirm-list.component';
-import { PurchaseListComponent } from './purchase-list/purchase-list.component';
-import { PurchaseItemComponent } from './purchase-list/purchase-item/purchase-item.component';
-import { ItemDetailButtonComponent } from './item-detail/item-detail-button/item-detail-button.component';
-import { ImageComponent } from './image/image.component';
-import { DeleteEventAutoAlertComponent } from './delete-event-auto-alert/delete-event-auto-alert.component';
+import { ItemDetailComponent } from './ReUse/item-detail/item-detail.component';
+import { SearchItemFormComponent } from './Components/search-item-form/search-item-form.component';
+import { PageMoveButtonComponent } from './ReUse/page-move-button/page-move-button.component';
+import { MyPageComponent } from './Components/my-page/my-page.component';
+import { GarbageComponent } from './Components/garbage/garbage.component';
+import { OrderManagementComponent } from './Components/order-management/order-management.component';
+import { PurchaseLogComponent } from './Components/purchase-log/purchase-log.component';
+import { ConfirmOrderComponent } from './Components/confirm-order/confirm-order.component';
+import { ConfirmListComponent } from './Components/confirm-order/confirm-list/confirm-list.component';
+import { PurchaseListComponent } from './Components/purchase-log/purchase-list/purchase-list.component';
+import { PurchaseItemComponent } from './Components/purchase-log/purchase-list/purchase-item/purchase-item.component';
+import { ItemDetailButtonComponent } from './ReUse/item-detail/item-detail-button/item-detail-button.component';
+import { ImageComponent } from './ReUse/image/image.component';
+import { DeleteEventAutoAlertComponent } from './ReUse/delete-event-auto-alert/delete-event-auto-alert.component';
 
 @NgModule({
   declarations: [
